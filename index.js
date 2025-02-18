@@ -20,8 +20,6 @@ client.on("disconnected", (reason) => {
 });
 
 const openai = new OpenAI({
-  baseURL: "https://api.groq.com/openai/v1",
-  apiKey: process.env.GROQ_API_KEY,
 });
 
 
@@ -37,7 +35,7 @@ client.initialize();
 async function runCompletion(message) {
   try {
     const completion = await openai.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
+      model: "gpt-4o",
       messages: [
         {
             role: "system",
